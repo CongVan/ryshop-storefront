@@ -6,7 +6,15 @@ const store = require("./store.config.json")
 
 module.exports = withStoreConfig({
   features: store.features,
-  reactStrictMode: true,
+
+  eslint: {
+    dirs: ["src"],
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  reactStrictMode: false,
   images: {
     domains: ["medusa-public-images.s3.eu-west-1.amazonaws.com", "localhost"],
   },
